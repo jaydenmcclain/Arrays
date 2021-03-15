@@ -1,14 +1,67 @@
-var wrap=document.body.querySelector(".wrapper");
-var match=Number(prompt("How many hits would you like to attempt on the dragon?"));
-var userDamage=Math.floor(Math.random()*match)+1;
-var drgDamage=Math.floor(Math.random()*2);
-var dragon=10;
-var user=5;
-while(dragon>0||user>0){
-  match=Number(prompt("How many hits would you like to attempt on the dragon?"));
-  userDamage=Math.floor(Math.random()*match)+1;
-  drgDamage=Math.floor(Math.random()*2);
-  var userHealth=user-drgDamage
-  var drgHealth=dragon-userDamage
+var wrap=document.body.querySelector(".wrap");
+var warriors = [
+  {
+    name:"Bob",
+    damage:2,
+    health:10,
+    warrior:true
+  },
+  {
+    name:"Jerry",
+    damage:1,
+    health:12,
+    warrior:true
+  },
+  {
+    name:"Mavis",
+    damage:2,
+    health:10,
+    warrior:true
+  },
+  {
+    name:"Morty",
+    damage:4,
+    health:10,
+    warrior:true
+  },
+  {
+    name:"Shorty",
+    damage:10,
+    health:3,
+    warrior:false
+  },
+  {
+    name:"Porty",
+    damage:1,
+    health:14,
+    warrior:true
+  },{
+    name:"Perry",
+    damage:2,
+    health:9,
+    warrior:true
+  },
+  {
+    name:"Larry",
+    damage:2,
+    health:17,
+    warrior:false
+  }
+];
+
+for(var i=0; i<warriors.length; i++){
+ var ele=document.createElement("div");
+ var eleName=document.createElement("h1");
+ var eleDamage=document.createElement("h3");
+ var eleHealth=document.createElement("h3")
+  if(warriors[i].name==="a"){
+    ele.style.color="red";
+  }
+  eleName.innerHTML="Name:"+warriors[i].name;
+  eleDamage.innerHTML="Age: "+warriors[i].damage;
+  eleHealth.innerHTML="Health: "+warriors[i].health;
+  ele.appendChild(eleName);
+  ele.appendChild(eleDamage);
+  ele.appendChild(eleHealth);
+  wrap.appendChild(ele);
 }
-  document.body.querySelector(".wrapper").innerHTML="Dragon Health: "+drgHealth+"User Health: "+userHealth;
